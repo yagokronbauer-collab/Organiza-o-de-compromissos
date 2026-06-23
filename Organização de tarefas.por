@@ -27,6 +27,11 @@ programa {
       escreva(compromisso)
       escreva("\nData: ", dia,"/", mes,"/", ano)
       pare
+      caso 3:
+      escreva("/nTenha um ótima dia!!!")
+      pare
+      caso contrario:
+      escreva("Opção inválida!")
     }
 
      }
