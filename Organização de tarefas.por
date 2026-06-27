@@ -1,7 +1,11 @@
 programa {
   funcao inicio() {
-    inteiro opcao, dia, mes, ano
-    cadeia compromisso
+    
+cadeia compromisso[100]
+inteiro dia[100], mes[100], ano[100]
+inteiro qtd = 0, opcao, i
+
+// Obs: Para conseguir cadastrar mais de um compromisso e mostrá-los depois foi preciso a ajuda do chat para adicionar vetores
 
 enquanto(opcao != 3){
 escreva("\n-----------MENU------------")
@@ -14,21 +18,28 @@ leia(opcao)
 escolha(opcao){
 caso 1:
 escreva("Digite o compromisso: ")
-leia(compromisso)
+leia(compromisso[qtd])
+
 escreva("Digite o dia: ")
-leia(dia)
+leia(dia[qtd])
+
 escreva("Digite o mês: ")
-leia(mes)
+leia(mes[qtd])
+
 escreva("Digite o ano: ")
-leia(ano)
+leia(ano[qtd])
+
+qtd = qtd + 1
 pare
 caso 2:
-escreva("\nO(s) compromisso(s) agendado(s) são: ")
-escreva(compromisso)
-escreva("\nData: ", dia,"/", mes,"/", ano)
+escreva("\nCompromissos cadastrados:\n")
+para(i = 0; i < qtd; i++){
+escreva("\nCompromisso: ", compromisso[i])
+escreva("\nData: ", dia[i], "/", mes[i], "/", ano[i], "\n")
+}
 pare
 caso 3:
-escreva("\nTenha um ótima dia!!!")
+escreva("\nTenha um ótimo dia!!")
 pare
 caso contrario:
 escreva("Opção inválida!")
